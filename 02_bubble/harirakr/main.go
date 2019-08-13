@@ -27,12 +27,12 @@ func insertion(s []int) []int {
 			s[j], s[j-1] = s[j-1], s[j]
 		}
 	}
-        return s
+	return s
 }
 
 func main() {
-	fmt.Fprintln(out, "Bubble sort", bubble([]int{3,2,1,5}))
-	fmt.Fprintln(out, "Insertion sort", insertion([]int{3,2,1,5}))
-	fmt.Fprintln(out, "Bubble sort", bubble([]int{6,5,3,1,8,7,2,4}))
-	fmt.Fprintln(out, "Insertion sort", insertion([]int{6,5,3,1,8,7,2,4}))
+	fmt.Fprintln(out, "Bubble sort", bubble([]int{3, 2, 1, 5}))
+	fmt.Fprintln(out, "Insertion sort", insertion([]int{3, 2, 1, 5}))
+	fmt.Fprintln(out, "Bubble sort", bubble([]int{6, 5, 3, 1, 8, 7, 2, 4}))
+	fmt.Fprintln(out, "Insertion sort", insertion([]int{6, 5, 3, 1, 8, 7, 2, 4}))
 }

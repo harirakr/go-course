@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 type Data struct {
@@ -13,7 +14,7 @@ type Data struct {
 
 func TestSortFunctions(t *testing.T) {
 
-	testSet := []Data{
+	testCases := []Data{
 		{"Empty set",
 			[]int{},
 			[]int{},
@@ -44,10 +45,17 @@ func TestSortFunctions(t *testing.T) {
 		},
 	}
 
-	for _, v := range testSet {
-		assert.Equal(t, v.expected, bubble(v.input))
-		assert.Equal(t, v.expected, insertion(v.input))
+	for _, testCase := range testCases {
+		testCase := testCase
+		t.Run("Bubble:"+testCase.name, func(t *testing.T) {
+			assert.Equal(t, testCase.expected, bubble(testCase.input))
+		})
 	}
+	for _, testCase := range testCases {
+		testCase := testCase
+		t.Run("Insertion:"+testCase.name, func(t *testing.T) {
+			assert.Equal(t, testCase.expected, insertion(testCase.input))
+		})
+	}
+
 }
-
-
